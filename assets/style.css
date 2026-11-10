@@ -1,0 +1,87 @@
+body { background: #f5f7f6; color: #202824; min-height: 100vh; }
+.navbar-brand { letter-spacing: 1.5px; }
+.hero { background: linear-gradient(110deg, rgba(10,20,15,.94), rgba(10,20,15,.55)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=85') center/cover; min-height: 390px; display:flex; align-items:center; }
+.plan-card, .form-card, .stat-card { border-radius: 16px; }
+.form-card { background:#fff; padding:28px; max-width:620px; box-shadow:0 8px 30px rgba(0,0,0,.06); }
+.stat-card { background:#fff; padding:24px; box-shadow:0 8px 30px rgba(0,0,0,.05); height:100%; }
+.stat-card small { color:#6c757d; }
+.stat-card h3 { margin-top:10px; font-weight:700; }
+.footer { background:#17221b; }
+.table th { white-space:nowrap; }
+
+
+/* Card hover animation */
+.plan-card,
+.card {
+    transition: all 0.4s ease-in-out !important;
+    cursor: pointer;
+}
+
+.plan-card:hover,
+.card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Image zoom animation */
+.card img {
+    transition: transform 0.5s ease !important;
+}
+
+.card:hover img {
+    transform: scale(1.08) !important;
+}
+
+/* Button animation */
+.btn {
+    transition: all 0.3s ease !important;
+}
+
+.btn:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Automatic animation when website loads */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    animation: fadeUp 1s ease-out;
+}
+
+.card {
+    animation: fadeUp 1s ease-out;
+}
+
+.plan-card {
+    animation: fadeUp 1.3s ease-out;
+}
+
+/* Strong hover animation */
+.card:hover,
+.plan-card:hover {
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+}
+
+
+/* Keep admin dashboard normal */
+body.admin-page .card,
+body.admin-page .plan-card {
+    animation: none !important;
+    transition: none !important;
+}
+
+body.admin-page .card:hover,
+body.admin-page .plan-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
